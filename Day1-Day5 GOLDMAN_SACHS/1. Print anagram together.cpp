@@ -40,3 +40,24 @@ initution -
       }
       return res;
     }
+
+/* below is the program with O(N*|S|*log|S|) time complexity
+
+
+vector<vector<string> > Anagrams(vector<string>& s) {
+        vector<vector<string>>res;
+        unordered_map<string,vector<string>>mp;
+       for(string ele:s)
+       {
+           string word=ele;
+           sort(word.begin(),word.end());
+           mp[word].push_back(ele);
+       }
+       for(auto i:mp)
+       {
+           res.push_back(i.second);
+       }
+        return res;
+    }
+    
+   */
