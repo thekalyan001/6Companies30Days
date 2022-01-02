@@ -1,10 +1,10 @@
 //problem link- https://practice.geeksforgeeks.org/problems/print-anagrams-together/1/#
-
+/*
 initution -
  just iterate through all the string using double loop and first find the current element frequency at index i and iterate though next elemnt 
  j=i+1 and..
  try finding the frequency of each element and if it matches with current element freq count then take that into vector
- 
+*/
 //solution-
  bool areAnagram(string s1,string s2)
 {
