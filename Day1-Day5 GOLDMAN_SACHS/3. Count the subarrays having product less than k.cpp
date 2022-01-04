@@ -30,3 +30,78 @@ int countSubArrayProductLessThanK(const vector<int>& arr, int n, long long k) {
         }
         return res;
     }
+
+--------------------------------------------------------------------------------------------------------------------
+code working-----------
+eg-
+n = 7 , k = 100
+a[] = {1, 9, 2, 8, 6, 4, 3}
+
+res=0  //result  // res=res+(right-left+1);
+left=0 right=0
+prod=1
+
+res=1 (1)
+
+--------------------------
+left=0 right=1
+prod=9
+res=1+(2) // res=res+(right-left+1);
+
+res=3 (1, 9, {1,9})
+
+-------------------------
+left=0 right=2
+prod=18
+
+res=3+3 // res=res+(right-left+1);
+res=6 (1, 9, 2, {1,9} {9,2}, {1,9,2})
+-------------------------
+
+left=0  right=3
+prod=144
+now 144>=100
+so prod/arr[left] as left=0
+
+prod=prod/1  =>144  left=1 
+
+prod=prod/9  =>16  left=2
+
+now prod=16<100 so
+using formulae  res=res+(right-left+1); 
+
+left=2 right=3 
+res=6+ (2) // res=res+(right-left+1);
+res=8 (1, 9, 2, {1,9} {9,2}, {1,9,2}, 8,{2,8})
+-----------------------------------------------------
+
+
+left=2 right=4
+prod=96 (from index 2-4)
+res=8+ (3) // res=res+(right-left+1);
+res=11 (1, 9, 2, {1,9} {9,2}, {1,9,2},8, {2,8}, 6, {8,6}, {2,8,6})
+
+----------------------------------------------------
+
+left=2 right=5
+prod=384 
+
+now 384>=100
+so prod/arr[left] as left=2
+
+prod=prod/2  =>192  left=3
+
+prod=prod/8  =>24  left=4
+
+now pro=24<100 so
+using formulae  res=res+(right-left+1); 
+
+left=4 right=5
+res=11+ (2) // res=res+(right-left+1);
+res=13 (1, 9, 2, {1,9} {9,2}, {1,9,2},8, {2,8}, 6, {8,6}, {2,8,6}, 4, {6,4})
+
+----------------------------------------------------------------------------------
+
+left=4 right=6
+res=13+ (3) // res=res+(right-left+1);
+res=16 (1, 9, 2, {1,9}, {9,2}, {1,9,2}, 8, {2,8}, 6, {8,6}, {2,8,6}, 4, {6,4}, 3, {4,3}, {6,4,3})
