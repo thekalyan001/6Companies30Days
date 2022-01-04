@@ -12,6 +12,7 @@ The contiguous subarrays are {1}, {2}, {3}, {4}
 //Solution----------
 int countSubArrayProductLessThanK(const vector<int>& arr, int n, long long k) {
         //number of all possible subarrays of an array of size N is N * (N + 1)/2. Let countSubarrays (N) = N * (N + 1)/2
+        if(k<=1)return 0;
         long long res=0,prod=1;
         long long left=0,right=0;
         
