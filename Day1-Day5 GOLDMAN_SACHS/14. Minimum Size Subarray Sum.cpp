@@ -1,3 +1,4 @@
+//https://leetcode.com/problems/minimum-size-subarray-sum/submissions/
 int minSubArrayLen(int s, vector<int>& A) {
         int i = 0, n = A.size(), res = n + 1;
         for (int j = 0; j < n; ++j) {
